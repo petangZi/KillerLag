@@ -23,7 +23,7 @@ Dibuat dengan Python, menu interaktif CLI, no ASCII art berlebihan — simple, c
 pkg update && pkg upgrade -y
 pkg install python git -y
 git clone https://github.com/petangZi/KillerLag.git
-cd RedzNoLag
+cd KillerLag
 python RedzNoLag.py
 ```
 ## linux
@@ -31,7 +31,7 @@ python RedzNoLag.py
 sudo apt update && sudo apt upgrade -y
 sudo apt install python3 git -y
 git clone https://github.com/petangZi/KillerLag.git
-cd RedzNoLag
+cd KillerLag
 python3 RedzNoLag.py
 ```
 ### MAC OS
@@ -39,5 +39,5 @@ python3 RedzNoLag.py
 brew update
 brew install python git
 git clone https://github.com/petangZi/KillerLag.git
-cd RedzNoLag
+cd Killerlag
 python3 RedzNoLag.py
