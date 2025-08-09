@@ -38,6 +38,7 @@ except ImportError:
     os.system(f"{sys.executable} -m pip install psutil")
     import psutil
 
+
 # ---------------------- Config ----------------------
 PIDFILE = Path("/tmp/redz_lagkiller_full.pid") if platform.system() != "Windows" else Path(os.path.join(os.getenv("TEMP","."), "redz_lagkiller_full.pid"))
 SLEEP_INTERVAL = 60  # default for background loop
@@ -502,3 +503,40 @@ PILIH MODE:
                     print("[!] Format salah.")
             ci = input("CPU threshold (percent) atau Enter skip: ").strip()
     
+def toggle_invisible_mode(targets=None):
+    print("[*] Toggle invisible mode activated.")
+    if not targets:
+        print("[!] Target tidak diberikan.")
+        return
+    for t in targets:
+        try:
+            if isinstance(t, int):
+                p = psutil.Process(t)
+                p.suspend()
+                print(f"[+] Process {p.pid} suspended.")
+            else:
+                for proc in psutil.process_iter(['name']):
+                    if t.lower() in (proc.info.get('name') or "").lower():
+                        proc.suspend()
+                        print(f"[+] Process {proc.pid} ({proc.info['name']}) suspended.")
+        except Exception as e:
+            print(f"[!] Gagal suspend process {t}: {e}")
+
+def resume_processes(targets=None):
+    print("[*] Resume processes activated.")
+    if not targets:
+        print("[!] Target tidak diberikan.")
+        return
+    for t in targets:
+        try:
+            if isinstance(t, int):
+                p = psutil.Process(t)
+                p.resume()
+                print(f"[+] Process {p.pid} resumed.")
+            else:
+                for proc in psutil.process_iter(['name']):
+                    if t.lower() in (proc.info.get('name') or "").lower():
+                        proc.resume()
+                        print(f"[+] Process {proc.pid} ({proc.info['name']}) resumed.")
+        except Exception as e:
+            print(f"[!] Gagal resume process {t}: {e}")
