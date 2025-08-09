@@ -19,7 +19,7 @@ Dibuat dengan Python, menu interaktif CLI, no ASCII art berlebihan — simple, c
 ## 📦 Instalasi
 ### Termux / Linux / macOS
 ```bash
-git clone https://github.com/petangZI/RedzNoLag
+git clone https://github.com/petangZi/KillerLag.git
 cd RedzNoLag
 pkg install python -y      # Termux
 # atau
