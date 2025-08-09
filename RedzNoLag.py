@@ -31,13 +31,12 @@ import platform
 import subprocess
 from pathlib import Path
 from datetime import datetime
-
-# External lib
 try:
     import psutil
-except Exception:
-    print("[!] Missing dependency: psutil. Install with: pip install psutil")
-    sys.exit(1)
+except ImportError:
+    print("[!] Modul psutil belum terpasang, sedang menginstal...")
+    os.system(f"{sys.executable} -m pip install psutil")
+    import psutil
 
 # ---------------------- Config ----------------------
 PIDFILE = Path("/tmp/redz_lagkiller_full.pid") if platform.system() != "Windows" else Path(os.path.join(os.getenv("TEMP","."), "redz_lagkiller_full.pid"))
