@@ -17,11 +17,27 @@ Dibuat dengan Python, menu interaktif CLI, no ASCII art berlebihan — simple, c
 ---
 
 ## 📦 Instalasi
-### Termux / Linux / macOS
+
+### Android (Termux)
 ```bash
+pkg update && pkg upgrade -y
+pkg install python git -y
 git clone https://github.com/petangZi/KillerLag.git
 cd RedzNoLag
-pkg install python -y      # Termux
-# atau
-sudo apt install python3   # Linux
-brew install python         # macOS
+python RedzNoLag.py
+```
+## linux
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install python3 git -y
+git clone https://github.com/petangZi/KillerLag.git
+cd RedzNoLag
+python3 RedzNoLag.py
+```
+### MAC OS
+```
+brew update
+brew install python git
+git clone https://github.com/petangZi/KillerLag.git
+cd RedzNoLag
+python3 RedzNoLag.py
