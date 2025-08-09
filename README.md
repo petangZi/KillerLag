@@ -21,7 +21,12 @@ Dibuat dengan Python, menu interaktif CLI, no ASCII art berlebihan — simple, c
 ### Android (Termux)
 ```bash
 pkg update && pkg upgrade -y
+pkg install python clang python-dev libffi-dev
+pkg install build-essential
+pkg install git
 pkg install python git -y
+pip install --upgrade pip wheel setuptools
+pip install psutil --no-cache-dir
 git clone https://github.com/petangZi/KillerLag.git
 cd KillerLag
 python RedzNoLag.py
